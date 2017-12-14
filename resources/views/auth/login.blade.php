@@ -1,69 +1,47 @@
-@extends('layouts.app')
+@extends('layouts.auth') 
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+	<div class="row justify-content-center">
+		<div class="col-md-5">
+			<div class="card-group">
+				<div class="card p-4">
+					<div class="card-body">
+						<h1>Iniciar Sesión</h1>
+						<p class="text-muted">Iniciar sesión en tu cuenta</p>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+						<form class="form-horizontal" method="POST" action="{{ route('login') }}">
+							{{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+							<div class="input-group mb-3">
+								<span class="input-group-addon"><i class="icon-user"></i></span>
+								<input id="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+							</div>
+							<div style="color: #f86c6b;" class="help-block">{{ $errors->first('email') }}</div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+							<div class="input-group mb-4">
+								<span class="input-group-addon"><i class="icon-lock"></i></span>
+								<input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña" required>
+							</div>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+							<input type="checkbox" name="remember" style="display:none;" checked>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+							<div class="row">
+								<div class="col-6">
+									<button type="submit" class="btn btn-primary px-4">Iniciar Sesión</button>
+								</div>
+								<div class="col-6 text-right">
+									<a href="{{ route('password.request') }}" class="btn btn-link px-0">¿Olvidaste tu contraseña?</a>
+								</div>
+							</div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+						</form>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 </div>
 @endsection
