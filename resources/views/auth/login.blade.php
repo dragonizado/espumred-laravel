@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-md-5">
+		<div class="col-md-8">
 			<div class="card-group">
 				<div class="card p-4">
 					<div class="card-body">
@@ -39,7 +39,15 @@
 
 					</div>
 				</div>
-				
+				<div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+		            <div class="card-body text-center">
+		              <div>
+		                <h2>No tienes cuenta?</h2>
+		                <p>Puedes realizar otras operaciones en el sistema como consultar nuestro directorio telefonico, realizar operaciones con nuestros convenios o presentar tu hoja de vida para trabajar con nosotros.</p>
+		                <button type="button" class="btn btn-primary active mt-3">Ver ahora!</button>
+		              </div>
+		            </div>
+		        </div>
 			</div>
 		</div>
 	</div>
