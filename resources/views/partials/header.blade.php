@@ -18,9 +18,6 @@ usuario y el nombre del usuario, el botón de cerrar sessión y los settings --}
 		<li class="nav-item d-md-down-none">
 			<a class="nav-link" href="#"><i class="icon-list"></i></a>
 		</li>
-		<li class="nav-item d-md-down-none">
-			<a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
-		</li>
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 				<img src="{{ asset('images/logoespumred2.png') }}" class="img-avatar" alt="{{ Auth::user()->email }}">
