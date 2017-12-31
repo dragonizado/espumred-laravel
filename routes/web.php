@@ -14,3 +14,7 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('areas/{id}', 'HomeController@show')->name('modulos');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
