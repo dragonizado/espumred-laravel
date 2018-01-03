@@ -1,1 +1,12 @@
-[]
+{
+    "Pedidos": {
+        "basename": "Pedidos",
+        "name": "Pedido",
+        "slug": "pedidos",
+        "version": "1.0",
+        "description": "A\u00f1ade la funcionalidad de registrar los pedidos por medio del aplicativo",
+        "id": 1729547434,
+        "enabled": true,
+        "order": 9001
+    }
+}
