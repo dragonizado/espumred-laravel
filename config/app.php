@@ -163,6 +163,7 @@ return [
 		Illuminate\Validation\ValidationServiceProvider::class,
 		Illuminate\View\ViewServiceProvider::class,
 		TCG\Voyager\VoyagerServiceProvider::class,
+		Caffeinated\Modules\ModulesServiceProvider::class,
 		/*
 			* Package Service Providers...
 			*/
@@ -225,7 +226,7 @@ return [
 		'URL' => Illuminate\Support\Facades\URL::class,
 		'Validator' => Illuminate\Support\Facades\Validator::class,
 		'View' => Illuminate\Support\Facades\View::class,
-
+		'Module' => Caffeinated\Modules\Facades\Module::class,
 	],
 
 ];

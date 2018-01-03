@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "61463ec4537e9c743fc6c930fc116087",
+    "content-hash": "f16b357b2e3b6fcc0c9de111dba5f20d",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -66,6 +66,51 @@
                 "widgets"
             ],
             "time": "2017-11-23T21:18:07+00:00"
+        },
+        {
+            "name": "caffeinated/modules",
+            "version": "v4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caffeinated/modules.git",
+                "reference": "7a500dbd20b4309610c5f2c36281fcab85540d64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caffeinated/modules/zipball/7a500dbd20b4309610c5f2c36281fcab85540d64",
+                "reference": "7a500dbd20b4309610c5f2c36281fcab85540d64",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.4.*",
+                "php": ">=5.6.4"
+            },
+            "suggest": {
+                "wikimedia/composer-merge-plugin": "Allows the ability to create and merge composer.json files for your individual modules for module-specific dependency management."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Caffeinated\\Modules\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shea Lewis",
+                    "email": "shea.lewis89@gmail.com"
+                }
+            ],
+            "description": "Laravel 5.x Modules",
+            "keywords": [
+                "caffeinated",
+                "laravel",
+                "modules"
+            ],
+            "time": "2017-08-28T16:13:01+00:00"
         },
         {
             "name": "composer/ca-bundle",
