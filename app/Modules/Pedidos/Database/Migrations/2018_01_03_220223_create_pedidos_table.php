@@ -19,8 +19,8 @@ class CreatePedidosTable extends Migration
     		$table->foreign('cod_cliente')->references('cod_cliente')->on('clientes');
     		$table->string('obs_entrega');
     		$table->dateTime('fecha_creacion');
-            $table->integer('id_usuario')->unsigned();
-    		$table->foreign('id_usuario')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
+    		$table->foreign('user_id')->references('id')->on('users');
     		$table->string('estado_correo',45);
     		$table->string('estado_pedido',45);
     		$table->string('codigo_sap',45);

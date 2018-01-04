@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreciosproductoTable extends Migration
+class CreatePreciosProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePreciosproductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('preciosproductos', function (Blueprint $table) {
+        Schema::create('precios_productos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('precio',45);
             $table->integer('id_producto')->unsigned();
-            $table->integer('id_lista_precios')->unsigned();
+            $table->integer('id_listas_precios')->unsigned();
             $table->foreign('id_producto')->references('id')->on('productos');
-            $table->foreign('id_lista_precios')->references('id')->on('listasprecios');
+            $table->foreign('id_listas_precios')->references('id')->on('listas_precios');
         });
     }
 

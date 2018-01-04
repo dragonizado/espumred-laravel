@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListasprecioTable extends Migration
+class CreateListasPreciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateListasprecioTable extends Migration
      */
     public function up()
     {
-        Schema::create('listasprecios', function (Blueprint $table) {
+        Schema::create('listas_precios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion',45);
         });
