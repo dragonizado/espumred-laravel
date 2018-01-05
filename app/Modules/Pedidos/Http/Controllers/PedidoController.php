@@ -8,5 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class PedidoController extends Controller {
-	//
+	public function index() {
+		return view('pedidos::index');
+	}
 }

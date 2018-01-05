@@ -12,7 +12,5 @@
 */
 
 Route::group(['prefix' => 'pedidos'], function () {
-	Route::get('/', function () {
-		dd('This is the Pedido module index page. Build something great!');
-	});
+	Route::get('/', 'PedidoController@index');
 });

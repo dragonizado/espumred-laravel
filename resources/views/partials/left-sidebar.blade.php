@@ -9,7 +9,7 @@
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="widgets.html"><i class="icon-calculator"></i> Menu 2</a>
+				<a class="nav-link" href="{{ url('pedidos') }}"><i class="icon-notebook"></i> Pedidos</a>
 			</li>
 
 			<li class="nav-item nav-dropdown">
