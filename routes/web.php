@@ -16,5 +16,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('modulos/{id}', 'HomeController@show')->name('modulos');
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+  Voyager::routes();
 });

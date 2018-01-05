@@ -46,6 +46,7 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan vendor:publish --tag=modules --force",
             "php artisan optimize"
         ]
     },
