@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulosTable extends Migration
+class CreateAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,9 +18,6 @@ class CreateModulosTable extends Migration
             $table->string('nombre');
             $table->string('estado');
             $table->string('icono');
-            $table->integer('area_id')->unsigned();
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
-            $table->index('area_id');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateModulosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modulos');
+        Schema::dropIfExists('areas');
     }
 }

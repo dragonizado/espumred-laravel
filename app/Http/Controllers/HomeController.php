@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Area;
 use App\Models\Modulo;
+use App\Models\Bloque;
 
 class HomeController extends Controller {
 
@@ -14,13 +14,13 @@ class HomeController extends Controller {
 
 
 	public function index() {
-		$areas = Area::orderBy('nombre', 'desc')->get();
-		return view('home')->with('areas', $areas);
+		$modulos = Modulo::orderBy('nombre', 'desc')->get();
+		return view('home')->with('modulos', $modulos);
 	}
 
 	public function show($id) {
-		$modulos = Area::find($id)->modulos;
-		return view('modulos')->with('modulos', $modulos);
+		$bloques = Modulo::find($id)->bloques;
+		return view('bloques')->with('bloques', $bloques);
 	}
 
 }

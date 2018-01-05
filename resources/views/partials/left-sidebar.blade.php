@@ -5,7 +5,7 @@
 		<ul class="nav" style="margin-top: 10px;">
 
 			<li class="nav-item">
-				<a class="nav-link active" href="widgets.html"><i class="icon-calculator"></i> Home</a>
+				<a class="nav-link active" href="{{ url('/') }}"><i class="icon-calculator"></i> Home</a>
 			</li>
 
 			<li class="nav-item">
