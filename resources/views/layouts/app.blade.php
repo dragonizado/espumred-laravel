@@ -38,7 +38,7 @@
 
     <footer class="app-footer">
       <span><a href="http://espumred.com">Espumred</a> © 2017 Espumas Medellín.</span>
-      <span class="ml-auto"><a href="www.espumasmedellin.com">Espumas Medellín</a></span>
+      <span class="ml-auto"><a href="http://www.espumasmedellin.com">Espumas Medellín</a></span>
     </footer>
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
