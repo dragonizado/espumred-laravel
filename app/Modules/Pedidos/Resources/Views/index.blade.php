@@ -18,23 +18,38 @@
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<strong>Jesus Francisco Scarpetta</strong>		
+									<strong>{{ Auth::user()->name }}</strong>		
 								</div>
 								<div class="card-body">
 
 									<form action="#" method="post">
 
-										<div class="form-group">
-											<label for="tipo_pedido">Tipo de Pedido</label>
-											<select class="form-control" id="tipo_pedido">
-												<option value="" disabled selected>Seleccione una opción</option>
-												<option value="1">Espumas</option>
-												<option value="2">Colchones</option>
-												<option value="3">Muebles</option>
-												<option value="5">Modulos</option>
-												<option value="6">Segundas</option>
-												<option value="4">Otros</option>
-											</select>
+										<div class="row">
+											<div class="col-md-6 col-xs-12">
+												<div class="form-group">
+													<label for="tipo_pedido">Tipo de Pedido</label>
+													<select class="form-control" id="tipo_pedido">
+														<option value="" disabled selected>Seleccione una opción</option>
+														<option value="1">Espumas</option>
+														<option value="2">Colchones</option>
+														<option value="3">Muebles</option>
+														<option value="5">Modulos</option>
+														<option value="6">Segundas</option>
+														<option value="4">Otros</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6 col-xs-12">
+												<div class="form-group">
+													<label for="listas_precios">Lista de Precios</label>
+													<select class="form-control" id="listas_precios">
+														<option value="" disabled selected>Seleccione una opción</option>
+														@foreach($listasprecios as $listaprecio)
+															<option value="{{ $listaprecio->id }}">{{ $listaprecio->descripcion }}</option>
+														@endforeach
+													</select>
+												</div>
+											</div>
 										</div>
 
 										<div class="row">
