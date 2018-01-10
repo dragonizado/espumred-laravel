@@ -106,5 +106,6 @@
 
 
 @section('scripts')
+	<script src="{{ asset('modules/pedidos/steps.js') }}"></script>
 	<script src="{{ asset('modules/pedidos/main.js') }}"></script>
 @endsection

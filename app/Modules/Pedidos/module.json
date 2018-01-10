@@ -1,5 +1,5 @@
 {
-    "name": "Pedido",
+    "name": "Pedidos",
     "slug": "pedidos",
     "version": "1.0",
     "description": "Añade la funcionalidad de registrar los pedidos por medio del aplicativo"

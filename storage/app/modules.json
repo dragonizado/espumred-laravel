@@ -1,7 +1,17 @@
 {
+    "Condiciones": {
+        "basename": "Condiciones",
+        "name": "Condiciones",
+        "slug": "condiciones",
+        "version": "1.0",
+        "description": "Condiciones comerciales",
+        "id": 3065722298,
+        "enabled": true,
+        "order": 9001
+    },
     "Pedidos": {
         "basename": "Pedidos",
-        "name": "Pedido",
+        "name": "Pedidos",
         "slug": "pedidos",
         "version": "1.0",
         "description": "A\u00f1ade la funcionalidad de registrar los pedidos por medio del aplicativo",

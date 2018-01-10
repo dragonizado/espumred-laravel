@@ -89,6 +89,33 @@ a:hover {
   text-decoration: none !important;
 }
 
+/* Steps */
+
+.wizard>.content {
+	min-height: 2em;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+}
+
+.wizard > .content > .title,
+.tabcontrol > .content > .title {
+	position: absolute;
+	left: -999em;
+}
+
+
+.wizard > .content > .body {
+	float: left;
+	position: absolute;
+	width: 95%;
+	height: 95%;
+}
+
+.steps {
+	display: none;
+}
+
 *,
 *::before,
 *::after {
