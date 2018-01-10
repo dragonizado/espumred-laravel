@@ -21,6 +21,10 @@ $.grayLight =     '#818a91';
 $.grayLighter =   '#d1d4d7';
 $.grayLightest =  '#f8f9fa';
 
+//Steps
+$.step1 = $("#step1");
+$.step2 = $("#step2");
+
 'use strict';
 
 /****
@@ -28,6 +32,8 @@ $.grayLightest =  '#f8f9fa';
 */
 
 $(document).ready(function($){
+
+  $.step2.height($.step1.height());
 
   // Add class .active to current link
   $.navigation.find('a').each(function(){
@@ -108,6 +114,21 @@ $(document).ready(function($){
   });
 
 });
+
+/****
+* SLIDE ACTIONS
+*/
+
+function stepNext() {
+  $("#slider").css("margin-left", "-100%");
+  $.step2.css("height", ""); 
+}
+
+function stepPrev() {
+  $("#slider").css("margin-left", "0");
+  $.step2.css("height", $.step1.height()); 
+}
+
 
 /****
 * CARDS ACTIONS
