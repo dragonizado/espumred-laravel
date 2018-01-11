@@ -170,6 +170,16 @@ input::placeholder {
   background-color: #FF832E;
 }
 
+.eliminar {
+  width: 3px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
 *,
 *::before,
 *::after {

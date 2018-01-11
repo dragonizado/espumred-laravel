@@ -170,56 +170,78 @@
 												</div>
 											</div>
 											<div class="col-md-7">
-												<table class="table table-bordered">
+												<table class="table table-bordered border-0">
 													<thead class="thead-default f12">
 														<tr>
 															<th>N° Orden</th>
 															<th>Descripción Producto</th>
 															<th>Valor Unitario</th>
 															<th>Valor Total</th>
-															<th>Eliminar</th>
+															<th class="eliminar">Eliminar</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr>
 															<th scope="row">1</th>
 															<td>Mark</td>
-															<td>Otto</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
+															<td>9.000</td>
+															<td>20.500</td>
+															<td class="text-center">
+																<button class="btn btn-danger lh-1 p-1">
+																	<i class="font-weight-bold icon-close"></i>
+																</button>
+															</td>
 														</tr>
 														<tr>
 															<th scope="row">2</th>
 															<td>Jacob</td>
-															<td>Thornton</td>
-															<td>@fat</td>
-															<td>@mdo</td>
+															<td>1.050</td>
+															<td>15.000</td>
+															<td class="text-center">
+																<button class="btn btn-danger lh-1 p-1">
+																	<i class="font-weight-bold icon-close"></i>
+																</button>
+															</td>
 														</tr>
 														<tr>
 															<th scope="row">3</th>
 															<td>Larry</td>
-															<td>the Bird</td>
-															<td>@twitter</td>
-															<td>@mdo</td>
+															<td>1.250</td>
+															<td>12.000</td>
+															<td class="text-center">
+																<button class="btn btn-danger lh-1 p-1">
+																	<i class="font-weight-bold icon-close"></i>
+																</button>
+															</td>
 														</tr>
 													</tbody>
+													<tfoot>
+														<tr>
+															<td class="border-left-0 border-bottom-0" colspan="2"></td>
+															<td colspan="3">
+																<div class="d-flex justify-content-between">
+																	<div class="h5 mb-0">Total: </div>
+																	<div class="h5 mb-0">$24.000.000</div>
+																</div>
+															</td>
+														</tr>
+													</tfoot>
 												</table>
 
-												<div class="row justify-content-end">
-													<div class="col-md-6 col-xs-12">
-														<div class="card">
-															<div class="card-block p-1 clearfix">
-																<i style="font-size:1.18em;padding-top: 6px !important;" class="fa fa-dollar p-1 float-left"></i>
-																<div class="h5 mb-0 pt-1 mt-h float-left"> 
-																	Total:
-																</div>
-																<div class="h5 mb-0 pt-1 mt-h float-right"> 
-																	<span class="mb-1" id="price_text">$21.999.050</span>
-																</div>
-															</div>
-														</div>
+												<div class="row">
+													<div class="col-md-6">
+														<button type="button" class="btn btn-primary btn-lg btn-block">
+															<i class="icon-eyeglass"></i> Vista Previa
+														</button>
+													</div>
+													<div class="col-md-6">
+														<button type="button" class="btn btn-success btn-lg btn-block">
+															Enviar Pedido <i class="icon-paper-plane"></i>
+														</button>
 													</div>
 												</div>
+
+
 											</div>
 										</div>
 									</div>
