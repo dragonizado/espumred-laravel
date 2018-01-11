@@ -7761,7 +7761,7 @@ base-chart.chart {
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
-    background-image: url("../images/main-logo.jpeg");
+    background-image: url("../images/main-logo.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 120px auto;
@@ -7853,8 +7853,8 @@ base-chart.chart {
   .brand-minimized .app-header.navbar .navbar-brand {
     width: 50px;
     background-color: #fff;
-    background-image: url("../img/logo-symbol.png");
-    background-size: 24px;
+    background-image: url("../images/espumred-symbol.png");
+    background-size: 35px;
     border-bottom: 1px solid #c2cfd6; } }
 
 .progress-xs {
