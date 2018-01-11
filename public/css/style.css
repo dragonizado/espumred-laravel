@@ -7752,28 +7752,28 @@ base-chart.chart {
   height: 55px;
   padding: 0;
   margin: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #c2cfd6; }
+  background-color: #f77f2e;
+  border-bottom: 1px solid #c6611e; }
   .app-header.navbar .navbar-brand {
     display: inline-block;
     width: 155px;
     height: 55px;
     padding: 0.5rem 1rem;
     margin-right: 0;
-    background-color: #fff;
+    background-color: #f77f2e;
     background-image: url("../images/main-logo.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 120px auto;
-    border-bottom: 1px solid #c2cfd6; }
+    border-bottom: 1px solid #c6611e; }
   .app-header.navbar .navbar-toggler {
     min-width: 50px;
     padding: 0.25rem 0; }
     .app-header.navbar .navbar-toggler:hover .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2329363d' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
   .app-header.navbar .navbar-toggler-icon {
     height: 23px;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23536c79' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000000' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
   .app-header.navbar .navbar-nav {
     -ms-flex-direction: row;
         flex-direction: row;
@@ -7793,6 +7793,8 @@ base-chart.chart {
       border: 0; }
       .app-header.navbar .nav-item .nav-link .badge, .app-header.navbar .nav-item .dropdown-toggle .badge {
         position: absolute;
+        color: #000;
+        background-color: #fff;
         top: 50%;
         left: 50%;
         margin-top: -16px;
@@ -7812,9 +7814,9 @@ base-chart.chart {
     color: #29363d; }
 
 .navbar-nav .nav-link, .navbar-nav .navbar .dropdown-toggle, .navbar .navbar-nav .dropdown-toggle {
-  color: #536c79; }
+  color: #000; }
   .navbar-nav .nav-link:focus, .navbar-nav .navbar .dropdown-toggle:focus, .navbar .navbar-nav .dropdown-toggle:focus, .navbar-nav .nav-link:hover, .navbar-nav .navbar .dropdown-toggle:hover, .navbar .navbar-nav .dropdown-toggle:hover {
-    color: #29363d; }
+    color: #fff; }
 
 .navbar-nav .open > .nav-link, .navbar-nav .navbar .open > .dropdown-toggle, .navbar .navbar-nav .open > .dropdown-toggle, .navbar-nav .open > .nav-link:focus, .navbar-nav .navbar .open > .dropdown-toggle:focus, .navbar .navbar-nav .open > .dropdown-toggle:focus, .navbar-nav .open > .nav-link:hover, .navbar-nav .navbar .open > .dropdown-toggle:hover, .navbar .navbar-nav .open > .dropdown-toggle:hover,
 .navbar-nav .active > .nav-link,
@@ -7852,10 +7854,10 @@ base-chart.chart {
 @media (min-width: 992px) {
   .brand-minimized .app-header.navbar .navbar-brand {
     width: 50px;
-    background-color: #fff;
+    background-color: #f77f2e;
     background-image: url("../images/espumred-symbol.png");
     background-size: 35px;
-    border-bottom: 1px solid #c2cfd6; } }
+    border-bottom: 1px solid #c6611e; } }
 
 .progress-xs {
   height: 4px; }
@@ -7978,10 +7980,10 @@ base-chart.chart {
       color: #fff;
       background: #33444c; }
       .sidebar .nav-link.active i, .sidebar .navbar .active.dropdown-toggle i, .navbar .sidebar .active.dropdown-toggle i {
-        color: #20a8d8; }
+        color: #fff; }
     .sidebar .nav-link:hover, .sidebar .navbar .dropdown-toggle:hover, .navbar .sidebar .dropdown-toggle:hover {
       color: #fff;
-      background: #20a8d8; }
+      background: #33444c; }
       .sidebar .nav-link:hover i, .sidebar .navbar .dropdown-toggle:hover i, .navbar .sidebar .dropdown-toggle:hover i {
         color: #fff; }
       .sidebar .nav-link:hover.nav-dropdown-toggle::before, .sidebar .navbar .dropdown-toggle:hover.nav-dropdown-toggle::before, .navbar .sidebar .dropdown-toggle:hover.nav-dropdown-toggle::before {
@@ -8176,7 +8178,7 @@ base-chart.chart {
         width: 250px;
         overflow: visible; }
         .sidebar-minimized .sidebar .nav-item:hover > .nav-link, .sidebar-minimized .sidebar .navbar .nav-item:hover > .dropdown-toggle, .navbar .sidebar-minimized .sidebar .nav-item:hover > .dropdown-toggle {
-          background: #20a8d8; }
+          background: #33444c; }
           .sidebar-minimized .sidebar .nav-item:hover > .nav-link i, .sidebar-minimized .sidebar .navbar .nav-item:hover > .dropdown-toggle i, .navbar .sidebar-minimized .sidebar .nav-item:hover > .dropdown-toggle i {
             color: #fff; }
     .sidebar-minimized .sidebar .nav-link, .sidebar-minimized .sidebar .navbar .dropdown-toggle, .navbar .sidebar-minimized .sidebar .dropdown-toggle {
@@ -8196,7 +8198,7 @@ base-chart.chart {
         display: none; }
       .sidebar-minimized .sidebar .nav-link:hover, .sidebar-minimized .sidebar .navbar .dropdown-toggle:hover, .navbar .sidebar-minimized .sidebar .dropdown-toggle:hover {
         width: 250px;
-        background: #20a8d8; }
+        background: #33444c; }
         .sidebar-minimized .sidebar .nav-link:hover .badge, .sidebar-minimized .sidebar .navbar .dropdown-toggle:hover .badge, .navbar .sidebar-minimized .sidebar .dropdown-toggle:hover .badge {
           display: inline; }
       .sidebar-minimized .sidebar .nav-link.nav-dropdown-toggle::before, .sidebar-minimized .sidebar .navbar .nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar-minimized .sidebar .nav-dropdown-toggle.dropdown-toggle::before {
@@ -8210,7 +8212,7 @@ base-chart.chart {
       max-height: 1000px;
       background: #29363d; }
     .sidebar-minimized .sidebar .nav > .nav-dropdown:hover {
-      background: #20a8d8; }
+      background: #33444c; }
       .sidebar-minimized .sidebar .nav > .nav-dropdown:hover > .nav-dropdown-items {
         position: absolute;
         left: 50px;
