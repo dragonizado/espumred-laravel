@@ -8,7 +8,7 @@
 					
 					<div class="row">
 						<div class="col-sm-12">
-							<h3 class="card-title clearfix">Solicitud de Pedido</h3>
+							<h4 class="card-title clearfix">Solicitud de Pedido</h4>
 						</div>
 					</div>
 

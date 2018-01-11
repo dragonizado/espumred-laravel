@@ -31,5 +31,5 @@ $.tipo_pedido.change(function(){
 	} else {
 		$('#listas_precios').prop('disabled', true);
 	}
-	$('input, select').not('#tipo_pedido, #listas_precios').prop('disabled', false);
+	$('#pedidos_form input, #pedidos_form select').not('#tipo_pedido, #listas_precios').prop('disabled',false);
 });
