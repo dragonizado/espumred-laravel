@@ -109,6 +109,67 @@ a:hover {
   padding: 0px;
 }
 
+/* Font size */
+
+.f14 {
+  font-size: 14px;
+}
+
+.f13 {
+  font-size: 13px;
+}
+
+.f12 {
+  font-size: 12px;
+}
+.f11 {
+  font-size: 11px;
+}
+
+.f10 {
+  font-size: 10px;
+}
+
+/* Placeholder */
+
+input::-webkit-input-placeholder {
+  color:    #CBCBCB !important;
+}
+input:-moz-placeholder {
+  color:    #CBCBCB !important;
+  opacity:  1;
+}
+input::-moz-placeholder {
+  color:    #CBCBCB !important;
+  opacity:  1;
+}
+input:-ms-input-placeholder {
+  color:    #CBCBCB !important;
+}
+input::-ms-input-placeholder {
+  color:    #CBCBCB !important;
+}
+
+input::placeholder {
+  color:    #CBCBCB !important;
+}
+
+.badge-title {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 80%;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.badge-espumas {
+  color: #fff;
+  background-color: #FF832E;
+}
+
 *,
 *::before,
 *::after {
@@ -1295,7 +1356,7 @@ pre {
     color: #536c79;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
-    background-color: #c2cfd6;
+    background-color: #f0f3f5;
     opacity: 1; }
 
 select.form-control:not([size]):not([multiple]) {

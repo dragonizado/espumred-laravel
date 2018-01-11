@@ -16,13 +16,15 @@ $.next_btn = $("#next_btn");
 $(document).ready(function($){
 
 	/* Deshabilitar inputs y select por defecto */
-	$('input, select').not('#tipo_pedido').prop('disabled', true);
+	$('#pedidos_form input, #pedidos_form select').not('#tipo_pedido').prop('disabled', true);
+	$("#val_descuento, #val_unitario, #val_total").prop('disabled', true);
 
 });
 
 
 $.tipo_pedido.change(function(){
 	var tipo_pedido = $(this).val();
+	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
 
 	if(tipo_pedido == 2 || tipo_pedido == 3) {
 		$('#listas_precios').prop('disabled', false);
