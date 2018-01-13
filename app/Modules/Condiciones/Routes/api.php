@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/condiciones', function (Request $request) {
-    // return $request->condiciones();
-})->middleware('auth:api');
+//Route::get('/condiciones', function (Request $request) {
+//})->middleware('auth:api');

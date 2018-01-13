@@ -75,7 +75,7 @@
 												<input type="text" class="form-control" id="observaciones">
 											</div>
 
-											<div class="form-group row">
+											<div class="form-group row mb-2">
 												<label class="col-md-2" style="flex: 0 0 170px; max-width: 170px;">
 													¿Aplica bonificación?
 												</label>
@@ -88,8 +88,45 @@
 												</div>
 											</div>
 
+											<div id="bonificacion_container" class="d-none">
+												<div class="row">
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="detalle_bonificacion">Bonificación</label>
+															<input type="text" class="form-control" id="detalle_bonificacion">
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="referencia_bonificacion">Referencia</label>
+															<input type="text" class="form-control" id="referencia_bonificacion">
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="codigo_bonificacion">Código</label>
+															<input type="text" class="form-control" id="codigo_bonificacion">
+														</div>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															<label for="cantidad_bonificacion">Cantidad</label>
+															<input type="number" class="form-control" id="cantidad_bonificacion">
+														</div>
+													</div>
+													<div class="col-md-1">
+														<div class="form-group">
+															<label class="d-block">&nbsp;</label>
+															<button class="btn btn-success" id="add_bonificacion">
+																<i class="font-weight-bold icon-plus"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
 											<div class="form-group">
-												<button id="next_btn" onclick="stepNext()" type="button" class="btn btn-success">
+												<button id="next_btn" onclick="stepNext()" type="button" class="btn btn-success mt-2">
 													<b>Siguiente</b> &nbsp; <i class="fa fa-arrow-right"></i>
 												</button>
 											</div>
@@ -159,12 +196,12 @@
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Fecha de entrega</label>
 													<div class="col-md-8">
-														<input type="text" id="hf-email" name="hf-email" class="form-control">
+														<input type="text" id="fecha_entrega" name="fecha_entrega" class="form-control datepicker">
 													</div>
 												</div>
 
 												<div class="form-group">
-													<button id="prev_btn" onclick="stepPrev()" type="button" class="btn btn-success">
+													<button id="prev_btn" onclick="stepPrev()" type="button" class="btn btn-success mt-2">
 														<i class="fa fa-arrow-left"></i>&nbsp; <b>Volver</b> 
 													</button>
 												</div>

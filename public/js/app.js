@@ -28,7 +28,7 @@ $.step2 = $("#step2");
 'use strict';
 
 /****
-* MAIN NAVIGATION
+* MAIN 
 */
 
 $(document).ready(function($){
@@ -113,6 +113,14 @@ $(document).ready(function($){
     e.preventDefault();
   });
 
+  /* ---------- Datepicker ---------- */
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    language: "es",
+    orientation: "auto right",
+    autoclose: true,
+    todayHighlight: true
+  });
 });
 
 /****

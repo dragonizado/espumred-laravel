@@ -12,7 +12,5 @@
 */
 
 Route::group(['prefix' => 'condiciones'], function () {
-    Route::get('/', function () {
-        dd('This is the Condiciones module index page. Build something great!');
-    });
+
 });

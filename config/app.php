@@ -164,6 +164,7 @@ return [
 		Illuminate\View\ViewServiceProvider::class,
 		TCG\Voyager\VoyagerServiceProvider::class,
 		Caffeinated\Modules\ModulesServiceProvider::class,
+		Clockwork\Support\Laravel\ClockworkServiceProvider::class,
 		/*
 			* Package Service Providers...
 			*/

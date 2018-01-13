@@ -13,6 +13,7 @@
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simple-line-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
   </head>
 
   <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -44,6 +45,8 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    <script src="{{ asset('js/autocompleter.js') }}"></script>
     @yield('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
     
