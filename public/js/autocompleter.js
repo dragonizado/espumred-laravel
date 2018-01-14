@@ -298,7 +298,8 @@
 							 .after(html);
 
 					var $autocompleter = $node.next('.autocompleter').eq(0);
-
+					
+					$autocompleter.css('width', $node.css('width'));
 					$(window).resize(function() {
 						$autocompleter.css('width', $node.css('width'));
 					})
