@@ -299,6 +299,10 @@
 
 					var $autocompleter = $node.next('.autocompleter').eq(0);
 
+					$(window).resize(function() {
+						$autocompleter.css('width', $node.css('width'));
+					})
+
 					// Set autocomplete to off for warn overlay
 					var originalAutocomplete = $node.attr('autocomplete');
 					$node.attr('autocomplete', 'off');

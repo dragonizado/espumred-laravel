@@ -185,7 +185,7 @@ input::placeholder {
 /* Autocomplete */
 
 .autocompleter {
-  width: 93.7%;
+  width: 100%;
   display: none;
   background-color: #fff;
   border: 1px solid #c2cfd6;
