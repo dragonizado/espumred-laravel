@@ -60,7 +60,7 @@ $.tipo_pedido.change(function(){
 		break; 
 		case '6': //Otros
 			enable('#pedidos_form input, #val_descuento, #val_unitario, #val_total');
-			show('#valor_unitario_row');
+			show('#val_unitario_row');
 			disable('#listas_precios');
 			hide("#valor_kilo_row");
 		break; 
