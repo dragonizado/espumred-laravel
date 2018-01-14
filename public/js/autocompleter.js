@@ -543,6 +543,10 @@
 	function _buildList(list, data) {
 			var menu = '';
 
+			if (!list.length) {
+				menu = '<li style="pointer-events:none;background:#f0f3f5;" class="autocompleter-item">Sin resultados</li>';
+			}
+
 			for (var item = 0, count = list.length; item < count; item++) {
 					var classes = ['autocompleter-item'],
 							highlightReg = new RegExp(data.query, 'gi');
