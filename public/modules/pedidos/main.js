@@ -34,11 +34,11 @@ $.tipo_pedido.change(function(){
 			show("#valor_kilo_row");
 		break; 
 		case '2': //Colchones
-			enable("#listas_precios");
+			enable("#pedidos_form input, #listas_precios");
 			hide("#valor_kilo_row");
 		break; 
 		case '3': //Muebles
-			enable("#listas_precios, #val_unitario");
+			enable("#pedidos_form input, #listas_precios, #val_unitario");
 			hide("#valor_kilo_row");
 		break; 
 		case '4': //Módulos
@@ -162,6 +162,6 @@ function show(selector) {
 	$(selector).removeClass('d-none');
 }
 
-function hide(seelctor) {
+function hide(selector) {
 	$(selector).addClass('d-none');
 }
