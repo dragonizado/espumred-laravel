@@ -36,9 +36,9 @@
 															<option value="1">Espumas</option>
 															<option value="2">Colchones</option>
 															<option value="3">Muebles</option>
-															<option value="5">Modulos</option>
-															<option value="6">Segundas</option>
-															<option value="4">Otros</option>
+															<option value="4">Modulos</option>
+															<option value="5">Segundas</option>
+															<option value="6">Otros</option>
 														</select>
 													</div>
 												</div>
