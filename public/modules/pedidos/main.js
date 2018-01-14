@@ -45,6 +45,7 @@ $.bonificacion.change(function(){
 	}
 });
 
+
 var bonificacion_html = `
 	<div class="row">
 		<div class="col-md-3">
@@ -83,11 +84,13 @@ $("#add_bonificacion").click(function(e){
 	$('#bonificacion_container').append(bonificacion_html);
 })
 
+
 /* Eliminar fila de bonificación */
 $('#bonificacion_container').on('click', '#remove_bonificacion', function(e) {
 	e.preventDefault();
 	$(this).parent().parent().parent().remove();
 });
+
 
 /* Autocomplete nombre cliente */
 $($.nombre_cliente).autocompleter({
@@ -95,8 +98,10 @@ $($.nombre_cliente).autocompleter({
 	customLabel: 'nombre_cliente',
 	callback: function (value, index, data) {
 		console.log(data);
+		enable($.next_btn);
 	}
 });
+
 
 /* Autocomplete código cliente */
 $($.codigo_cliente).autocompleter({
@@ -104,9 +109,9 @@ $($.codigo_cliente).autocompleter({
 	customLabel: 'cod_cliente',
 	callback: function (value, index, data) {
 		console.log(data);
+		enable($.next_btn);
 	}
 });
-
 
 
 /*********************

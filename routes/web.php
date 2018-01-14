@@ -23,6 +23,3 @@ Route::group(['prefix' => 'admin'], function () {
 /* Clientes */
 Route::get('clientes/search_name', 'ClientController@search_name');
 Route::get('clientes/search_cod', 'ClientController@search_cod');
-Route::resource('clientes', 'ClientController');
-
-

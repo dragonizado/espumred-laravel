@@ -7,16 +7,6 @@ use App\Models\Cliente;
 
 class ClientController extends Controller {
 
-	public function index() {
-		$recipes = Cliente::orderBy('nombre_cliente')
-			->get(['nombre_cliente', 'cod_cliente']);
-
-		return response()
-			->json([
-				'recipes' => $recipes
-			]);
-	}
-
 	public function search_name() {
 		$results = Cliente::orderBy('nombre_cliente')
 			->where('nombre_cliente', 'like', '%'.request('query').'%')
