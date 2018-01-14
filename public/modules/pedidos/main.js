@@ -52,8 +52,9 @@ $.tipo_pedido.change(function(){
 		break; 
 		case '5': //Segundas
 			enable('#pedidos_form input');
-			disable('#val_descuento, #val_total')
-			hide("#valor_kilo_row, #val_unitario_row");
+			disable('#val_descuento, #val_total');
+			show('#valor_kilo_row');
+			hide('#val_unitario_row');
 		break; 
 		case '6': //Otros
 			enable('#pedidos_form input, #val_descuento, #val_unitario, #val_total')
