@@ -32,23 +32,25 @@ $.tipo_pedido.change(function(){
 		case '1': //Espumas
 			enable('#pedidos_form input');
 			disable('#listas_precios, #val_descuento, #val_unitario, #val_total');
-			show("#valor_kilo_row");
+			show("#valor_kilo_row, #valor_unitario_row");
 		break; 
 		case '2': //Colchones
 			enable('#pedidos_form input, #listas_precios');
 			disable('#val_descuento, #val_unitario, #val_total');
-
+			show('#valor_unitario_row');
 			hide("#valor_kilo_row");
 		break; 
 		case '3': //Muebles
 			enable("#pedidos_form input, #listas_precios, #val_unitario");
 			disable('#val_descuento, #val_total');
 			hide("#valor_kilo_row");
+			show('#valor_unitario_row');
 		break; 
 		case '4': //Módulos
 			enable('#pedidos_form input, #val_unitario');
 			disable('#listas_precios, #val_descuento, #val_total');
 			hide("#valor_kilo_row");
+			show('#valor_unitario_row');
 		break; 
 		case '5': //Segundas
 			enable('#pedidos_form input');
@@ -57,7 +59,8 @@ $.tipo_pedido.change(function(){
 			hide('#val_unitario_row');
 		break; 
 		case '6': //Otros
-			enable('#pedidos_form input, #val_descuento, #val_unitario, #val_total')
+			enable('#pedidos_form input, #val_descuento, #val_unitario, #val_total');
+			show('#valor_unitario_row');
 			disable('#listas_precios');
 			hide("#valor_kilo_row");
 		break; 
