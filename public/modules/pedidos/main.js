@@ -18,6 +18,7 @@ $(document).ready(function($){
 	/* Deshabilitar inputs y select por defecto */
 	disable('#pedidos_form input, #pedidos_form select, #next_btn', '#tipo_pedido');
 	disable('#val_descuento, #val_unitario, #val_total');
+	hide("#valor_kilo_row");
 
 });
 
@@ -26,13 +27,35 @@ $(document).ready(function($){
 $.tipo_pedido.change(function(){
 	var tipo_pedido = $(this).val();
 	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
-
-	if(tipo_pedido == 2 || tipo_pedido == 3) {
-		enable("#listas_precios");
-	} else {
-		disable("#listas_precios");
+	
+	switch(tipo_pedido) {
+		case '1': //Espumas
+			toggleState('#pedidos_form input', '#listas_precios');
+			show("#valor_kilo_row");
+		break; 
+		case '2': //Colchones
+			enable("#listas_precios");
+			hide("#valor_kilo_row");
+		break; 
+		case '3': //Muebles
+			enable("#listas_precios, #val_unitario");
+			hide("#valor_kilo_row");
+		break; 
+		case '4': //Módulos
+			toggleState('#pedidos_form input, #val_unitario', '#listas_precios');
+			hide("#valor_kilo_row");
+		break; 
+		case '5': //Segundas
+			toggleState('#pedidos_form input', '#listas_precios');
+			hide("#valor_kilo_row, #val_unitario_row");
+		break; 
+		case '6': //Otros
+			toggleState('#pedidos_form input, #val_descuento, #val_unitario, #val_total', '#listas_precios');
+			hide("#valor_kilo_row");
+		break; 
 	}
-	enable('#pedidos_form input, #pedidos_form select', '#listas_precios');
+
+
 });
 
 
@@ -128,4 +151,17 @@ function disable(selectors, exclude = "") {
 /* Habilita un selector */
 function enable(selectors, exclude = "") {
 	$(selectors).not(exclude).prop('disabled', false);
+}
+
+function toggleState(enabled, disabled) {
+	$(enabled).prop('disabled', false);
+	$(disabled).prop('disabled', true);
+}
+
+function show(selector) {
+	$(selector).removeClass('d-none');
+}
+
+function hide(seelctor) {
+	$(selector).addClass('d-none');
 }

@@ -165,6 +165,16 @@
 													</div>
 												</div>
 
+												<div class="form-group row" id="valor_kilo_row">
+													<label class="col-md-4 f12 pt-2 form-control-label">Valor Kilo</label>
+													<div class="col-md-8">
+														<select  id="valor_kilo" name="valor_kilo" class="form-control">
+															<option value="" disabled selected>Seleccione un valor</option>
+															<option value="1">KG ESPUMA D18 KG -- $7.500</option>
+														</select>
+													</div>
+												</div>
+
 												<div class="form-group row">
 													<label class="col-md-4 f12 form-control-label">Porcentaje Descuento</label>
 													<div class="col-md-8">
@@ -179,7 +189,7 @@
 													</div>
 												</div>
 
-												<div class="form-group row">
+												<div class="form-group row" id="val_unitario_row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Valor Unitario</label>
 													<div class="col-md-8">
 														<input type="text" id="val_unitario" name="val_unitario" class="form-control">
