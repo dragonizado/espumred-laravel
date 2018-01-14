@@ -98,6 +98,7 @@ $($.nombre_cliente).autocompleter({
 	customLabel: 'nombre_cliente',
 	callback: function (value, index, data) {
 		console.log(data);
+		$.codigo_cliente.val(data.cod_cliente);
 		enable($.next_btn);
 	}
 });
@@ -109,6 +110,7 @@ $($.codigo_cliente).autocompleter({
 	customLabel: 'cod_cliente',
 	callback: function (value, index, data) {
 		console.log(data);
+		$.nombre_cliente.val(data.nombre_cliente);
 		enable($.next_btn);
 	}
 });
