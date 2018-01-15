@@ -60,14 +60,17 @@
 													<div class="form-group">
 														<label for="name">Nombre Cliente</label>
 														<input type="text" class="form-control" id="nombre_cliente">
+														<div class="invalid-feedback"></div>
 													</div>
 												</div>
 												<div class="col-md-6 col-xs-12">
 													<div class="form-group">
 														<label for="name">Código Cliente</label>
 														<input type="text" class="form-control" id="codigo_cliente">
+														<div class="invalid-feedback"></div>
 													</div>
 												</div>
+												<div class="col-md-12 msg-errors hidden" id="errors-clientgroup">Si este mensaje es visible el sistema tiene problemas</div>
 											</div>
 
 											<div class="form-group">
@@ -308,4 +311,5 @@
 
 @section('scripts')
 	<script src="{{ asset('modules/pedidos/main.js') }}"></script>
+	<script src="{{ asset('modules/pedidos/validatecc.js') }}"></script>
 @endsection
