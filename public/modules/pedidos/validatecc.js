@@ -12,6 +12,7 @@ function validateCC(codigo){
 			$("#codigo_cliente").removeClass('is-invalid');
 			$("#codigo_cliente").addClass('is-valid');
 			$("#nombre_cliente_error").text("");
+			toastr.success(data.mensaje, "Cliente válido");
 			enable($.next_btn);
 		} else if(data.action == "error") {
 			$("#nombre_cliente").removeClass('is-invalid');
