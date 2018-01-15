@@ -16,10 +16,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('modulos/{id}', 'HomeController@show')->name('modulos');
 
-Route::group(['prefix' => 'admin'], function () {
-  Voyager::routes();
-});
-
 /* Clientes */
 Route::get('clientes/search_name', 'ClientController@search_name');
 Route::get('clientes/search_cod', 'ClientController@search_cod');

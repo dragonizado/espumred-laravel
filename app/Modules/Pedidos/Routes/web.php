@@ -12,10 +12,5 @@
 */
 
 Route::group(['prefix' => 'pedidos'], function () {
-	//peticiones get sin parametros
 	Route::get('/', 'PedidoController@index');
-
-	//peticions post sin parametros
-
-	//peticions post con parametros
 });

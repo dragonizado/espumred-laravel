@@ -12,12 +12,6 @@
 */
 
 Route::group(['prefix' => 'condiciones'], function () {
-	//peticiones get sin parametros
 	Route::get('/','CondicionController@index');
-	Route::get('/validate','CondicionController@validatecc');
-
-	//peticions post sin parametros
-
-	//peticions post con parametros
-	
+	Route::get('/validate','CondicionController@validateCondicion');
 });

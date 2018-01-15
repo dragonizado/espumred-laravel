@@ -60,17 +60,16 @@
 													<div class="form-group">
 														<label for="name">Nombre Cliente</label>
 														<input type="text" class="form-control" id="nombre_cliente">
-														<div class="invalid-feedback"></div>
+														<div id="nombre_cliente_error" class="invalid-feedback"></div>
 													</div>
 												</div>
 												<div class="col-md-6 col-xs-12">
 													<div class="form-group">
 														<label for="name">Código Cliente</label>
 														<input type="text" class="form-control" id="codigo_cliente">
-														<div class="invalid-feedback"></div>
+														<div id="codigo_cliente_error" class="invalid-feedback"></div>
 													</div>
 												</div>
-												<div class="col-md-12 msg-errors hidden" id="errors-clientgroup">Si este mensaje es visible el sistema tiene problemas</div>
 											</div>
 
 											<div class="form-group">
