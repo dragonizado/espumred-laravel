@@ -33,7 +33,9 @@
         </div>
       </main>
 
-      @include('partials.right-sidebar')
+      @section('right-sidebar')
+        @include('partials.right-sidebar')
+      @show
 
     </div>
 

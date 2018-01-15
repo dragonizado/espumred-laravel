@@ -12,7 +12,6 @@ class HomeController extends Controller {
 		$this->middleware('auth');
 	}
 
-
 	public function index() {
 		$modulos = Modulo::orderBy('nombre', 'desc')->get();
 		return view('home')->with('modulos', $modulos);
