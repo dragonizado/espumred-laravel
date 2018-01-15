@@ -1546,8 +1546,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .invalid-feedback {
   display: none;
-  margin-top: .25rem;
-  font-size: .875rem;
+  margin-top: .10rem;
+  font-size: .9em;
   color: #f86c6b; }
 
 .invalid-tooltip {
