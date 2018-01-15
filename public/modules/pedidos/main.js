@@ -9,6 +9,14 @@ $.codigo_cliente = $("#codigo_cliente");
 $.bonificacion = $("#bonificacion");
 $.next_btn = $("#next_btn");
 
+
+/*********************
+*   VARIABLES JS     *
+*********************/
+
+let _validatecc = false;
+let _token = $('meta[name="csrf_token"]').attr('content');
+
 /*********************
 *        INIT        *
 *********************/
@@ -26,6 +34,7 @@ $(document).ready(function($){
 /* Tipo pedido change evento */
 $.tipo_pedido.change(function(){
 	var tipo_pedido = $(this).val();
+	_validatecc = false;
 	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
 	
 	switch(tipo_pedido) {
@@ -33,6 +42,7 @@ $.tipo_pedido.change(function(){
 			enable('#pedidos_form input');
 			disable('#listas_precios, #val_descuento, #val_unitario, #val_total');
 			show("#valor_kilo_row, #valor_unitario_row");
+			_validatecc = true;
 		break; 
 		case '2': //Colchones
 			enable('#pedidos_form input, #listas_precios');
@@ -132,8 +142,9 @@ $($.nombre_cliente).autocompleter({
 	customLabel: 'nombre_cliente',
 	callback: function (value, index, data) {
 		console.log(data);
-		$.codigo_cliente.val(data.cod_cliente);
-		enable($.next_btn);
+		let _cod = data.cod_cliente;
+		$.codigo_cliente.val(_cod);
+		validate_CC(_cod);
 	}
 });
 
@@ -145,7 +156,7 @@ $($.codigo_cliente).autocompleter({
 	callback: function (value, index, data) {
 		console.log(data);
 		$.nombre_cliente.val(data.nombre_cliente);
-		enable($.next_btn);
+		validate_CC(data.cod_cliente);
 	}
 });
 

@@ -101,6 +101,16 @@ a:hover {
   transition: margin-left .4s;
 }
 
+.msg-errors{
+  color:#f86c6b;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden{
+  display: none;
+}
+
 .step {
   width: 50%;
   float: left;
