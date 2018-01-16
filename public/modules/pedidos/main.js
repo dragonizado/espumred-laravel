@@ -6,6 +6,8 @@ $.tipo_pedido = $("#tipo_pedido");
 $.listas_precio = $("#listas_precio");
 $.nombre_cliente = $("#nombre_cliente");
 $.codigo_cliente = $("#codigo_cliente");
+$.codigo_producto = $("#cod_producto");
+$.descripcion_producto = $("#desc_producto");
 $.bonificacion = $("#bonificacion");
 $.next_btn = $("#next_btn");
 
@@ -145,6 +147,24 @@ $($.codigo_cliente).autocompleter({
 	}
 });
 
+
+/* Autocomplete código producto */
+$($.codigo_producto).autocompleter({
+	source: '/producto/search_cod',
+	customLabel: 'id',
+	callback: function (value, index, data) {
+		$.descripcion_producto.val(data.descripcion);
+	}
+});
+
+/* Autocomplete descripción producto */
+$($.descripcion_producto).autocompleter({
+	source: '/producto/search_desc',
+	customLabel: 'descripcion',
+	callback: function (value, index, data) {
+		$.codigo_producto.val(data.id);
+	}
+});
 
 /*********************
 *     UTILIDADES     *
