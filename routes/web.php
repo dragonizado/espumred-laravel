@@ -19,3 +19,7 @@ Route::get('modulos/{id}', 'HomeController@show')->name('modulos');
 /* Clientes */
 Route::get('clientes/search_name', 'ClientController@search_name');
 Route::get('clientes/search_cod', 'ClientController@search_cod');
+
+/*Productos*/
+Route::get('producto/search_cod','ProductoController@search_cod');
+Route::get('producto/search_desc','ProductoController@search_desc');
