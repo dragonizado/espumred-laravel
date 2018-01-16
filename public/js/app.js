@@ -51,6 +51,22 @@ $(document).ready(function($){
     "hideMethod": "slideUp"
   }
 
+  // Money format options
+  accounting.settings = {
+    currency: {
+      symbol : "$",  
+      format: "%s%v",
+      decimal : ".",
+      thousand: ".",
+      precision : 0
+    },
+    number: {
+      precision : 0,
+      thousand: ".",
+      decimal : "."
+    }
+  }
+
   $.step2.height($.step1.height());
 
   // Add class .active to current link

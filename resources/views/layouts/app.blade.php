@@ -51,6 +51,7 @@
     <script src="{{ asset('js/datepicker.js') }}"></script>
     <script src="{{ asset('js/autocompleter.js') }}"></script>
     <script src="{{ asset('js/toastr.js') }}"></script>
+    <script src="{{ asset('js/accounting.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
     

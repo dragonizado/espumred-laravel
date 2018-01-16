@@ -5,8 +5,10 @@ namespace App\Modules\Condiciones\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Modules\Condiciones\Models\Condicion;
+use App\Modules\Condiciones\Models\CondicionesProducto;
 use Illuminate\Support\Facades\Auth;
 
 class CondicionController extends Controller {
@@ -17,16 +19,23 @@ class CondicionController extends Controller {
 
 	public function validateCondicion(Request $request){
 
-		$model = Condicion::where('cod_cliente', $request->codigo)
+		$model = Condicion::where('cod_cliente', [$request->codigo])
 			->where('id_asesor', Auth::id())
 			->where('estado', 'Vigente')
 			->orderBy('fecha_registro', 'desc')
 			->first();
 
-		if($model) {
+		$articulos = DB::table('condiciones_productos as cp')
+			->join('articulos_condiciones as ac', 'cp.id_articulo', '=','ac.id')
+			->select('cp.nuevo_precio', 'ac.descripcion')
+			->where('cp.id_condicion', $model->id)
+			->get();
+			
+ 		if($model) {
 			return response()->json([
-				'mensaje' => 'El usuario cuenta con una condición comercial vigente.',
+				'mensaje' => 'El cliente cuenta con una condición comercial vigente.',
 				'id' => $model->id,
+				'articulos' => $articulos,
 				'action' => 'continuar'
 			]);
 		} else {

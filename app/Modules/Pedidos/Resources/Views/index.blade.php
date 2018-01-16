@@ -172,7 +172,6 @@
 													<div class="col-md-8">
 														<select  id="valor_kilo" name="valor_kilo" class="form-control">
 															<option value="" disabled selected>Seleccione un valor</option>
-															<option value="1">KG ESPUMA D18 KG -- $7.500</option>
 														</select>
 													</div>
 												</div>
