@@ -19,7 +19,7 @@ class CondicionController extends Controller {
 
 	public function validateCondicion(Request $request){
 
-		$model = Condicion::where('cod_cliente', [$request->codigo])
+		$model = Condicion::where('cod_cliente', $request->codigo)
 			->where('id_asesor', Auth::id())
 			->where('estado', 'Vigente')
 			->orderBy('fecha_registro', 'desc')
