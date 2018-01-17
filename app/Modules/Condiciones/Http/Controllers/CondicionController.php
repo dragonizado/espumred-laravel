@@ -24,14 +24,15 @@ class CondicionController extends Controller {
 			->where('estado', 'Vigente')
 			->orderBy('fecha_registro', 'desc')
 			->first();
-
-		$articulos = DB::table('condiciones_productos as cp')
-			->join('articulos_condiciones as ac', 'cp.id_articulo', '=','ac.id')
-			->select('cp.nuevo_precio', 'ac.descripcion')
-			->where('cp.id_condicion', $model->id)
-			->get();
 			
  		if($model) {
+
+			$articulos = DB::table('condiciones_productos as cp')
+				->join('articulos_condiciones as ac', 'cp.id_articulo', '=','ac.id')
+				->select('cp.nuevo_precio', 'ac.descripcion')
+				->where('cp.id_condicion', $model->id)
+				->get();
+
 			return response()->json([
 				'mensaje' => 'El cliente cuenta con una condición comercial vigente.',
 				'id' => $model->id,

@@ -29,6 +29,13 @@ $(document).ready(function($){
 $.tipo_pedido.change(function(){
 	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
 
+	if($.codigo_cliente.val() && $.tipo_pedido.val() == '1') {
+		validateCC($.codigo_cliente.val());
+	} else {
+		removeInputError("#codigo_cliente, #nombre_cliente");
+		enable($.next_btn);
+	}
+
 	switch($.tipo_pedido.val()) {
 		case '1': //Espumas
 			enable('#pedidos_form input');
@@ -132,7 +139,11 @@ $($.nombre_cliente).autocompleter({
 	customLabel: 'nombre_cliente',
 	callback: function (value, index, data) {
 		$.codigo_cliente.val(data.cod_cliente);
-		if($.tipo_pedido.val() == '1') validateCC(data.cod_cliente);
+		if($.tipo_pedido.val() == '1') {
+			validateCC(data.cod_cliente);
+		} else {
+			enable($.next_btn);
+		}
 	}
 });
 
@@ -143,7 +154,11 @@ $($.codigo_cliente).autocompleter({
 	customLabel: 'cod_cliente',
 	callback: function (value, index, data) {
 		$.nombre_cliente.val(data.nombre_cliente);
-		if($.tipo_pedido.val() == '1') validateCC(data.cod_cliente);
+		if($.tipo_pedido.val() == '1') {
+			validateCC(data.cod_cliente);
+		} else {
+			enable($.next_btn);
+		}
 	}
 });
 
@@ -180,15 +195,31 @@ function enable(selectors, exclude = "") {
 	$(selectors).not(exclude).prop('disabled', false);
 }
 
-function toggleState(enabled, disabled) {
-	$(enabled).prop('disabled', false);
-	$(disabled).prop('disabled', true);
-}
-
+/* Elimina el estilo display:none del selector */
 function show(selector) {
 	$(selector).removeClass('d-none');
 }
 
+/* Agrega el estilo display:none del selector */
 function hide(selector) {
 	$(selector).addClass('d-none');
+}
+
+/* Pone el borde del campo en color rojo y muestra el mensaje de error abajo del input */
+function showInputError(selector, mensaje) {
+	$(selector).removeClass('is-invalid');
+	$(selector).addClass('is-invalid');
+	$(selector+"_error").text(mensaje);
+}
+
+/* Pone el borde del campo en color verde y oculta el mensaje de error abajo del input */
+function showInputSuccess(selector) {
+	$(selector).removeClass('is-invalid');
+	$(selector).addClass('is-valid');
+	$(selector+"_error").text("");
+}
+
+function removeInputError(selector) {
+	$(selector).removeClass('is-invalid');
+	$(selector+"_error").text("");
 }

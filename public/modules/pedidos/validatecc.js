@@ -6,22 +6,14 @@ function validateCC(codigo){
 	$.get("condiciones/validate", { codigo: codigo } )
 	.done(function( data ) {
 		if(data.action == "continuar") {
-			$("#nombre_cliente").removeClass('is-invalid');
-			$("#nombre_cliente").addClass('is-valid');
-			$("#codigo_cliente").removeClass('is-invalid');
-			$("#codigo_cliente").addClass('is-valid');
-			$("#nombre_cliente_error").text("");
+			showInputSuccess("#nombre_cliente, #codigo_cliente");
 			toastr.success(data.mensaje, "Cliente válido");
 			$.each(data.articulos, function(index, item) {
 				$("#valor_kilo").append(`<option value="${item.nuevo_precio}">${item.descripcion} &nbsp; - &nbsp; ${accounting.formatMoney(item.nuevo_precio)}</option>`)
 			});
 			enable($.next_btn);
 		} else if(data.action == "error") {
-			$("#nombre_cliente").removeClass('is-invalid');
-			$("#nombre_cliente").addClass('is-invalid');
-			$("#codigo_cliente").removeClass('is-valid');
-			$("#codigo_cliente").addClass('is-invalid');
-			$("#nombre_cliente_error").text(data.mensaje);
+			showInputError("#codigo_cliente, #nombre_cliente", data.mensaje);
 			toastr.error(data.mensaje, "Error");
 			disable($.next_btn);
 		}
