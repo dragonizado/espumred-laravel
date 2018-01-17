@@ -12,6 +12,10 @@
 				<a class="nav-link" href="{{ url('pedidos') }}"><i class="icon-notebook"></i> Pedidos</a>
 			</li>
 
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url('condiciones') }}"><i class="icon-calculator"></i> Condiciones Comerciales</a>
+			</li>
+
 			<li class="nav-item nav-dropdown">
 				<a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Components</a>
 				<ul class="nav-dropdown-items">
@@ -30,10 +34,6 @@
 				</ul>
 			</li>
 			
-			<li class="nav-item">
-				<a class="nav-link" href="widgets.html"><i class="icon-calculator"></i> Widgets</a>
-			</li>
-
 			<li class="nav-item">
 				<a class="nav-link" href="charts.html"><i class="icon-pie-chart"></i> Charts</a>
 			</li>

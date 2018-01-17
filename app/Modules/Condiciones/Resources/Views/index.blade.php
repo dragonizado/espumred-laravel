@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<center><h1>Condiciones comerciales</h1></center>
-<p>Este es el index de las condicones comerciales :D</p>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-body">
+
+				<div class="row">
+					<div class="col-sm-12">
+						<h4 class="card-title clearfix">Condiciones Comerciales</h4>
+					</div>
+				</div>
+
+				<hr class="m-0 mb-4">
+				<p>Este es el index de las condicones comerciales :D</p>
+			</div>
+		</div>
+	</div>
+</div>
+		
 @endsection
