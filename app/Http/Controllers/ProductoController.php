@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 
-class ProductoController extends Controller
-{
+class ProductoController extends Controller {
+	
     public function search_cod() {
 		$results = Producto::orderBy('id')
 			->where('id', 'like', '%'.request('query').'%')

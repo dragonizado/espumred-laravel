@@ -165,7 +165,7 @@ $($.codigo_cliente).autocompleter({
 
 /* Autocomplete código producto */
 $($.codigo_producto).autocompleter({
-	source: '/producto/search_cod',
+	source: '/productos/search_cod',
 	customLabel: 'id',
 	callback: function (value, index, data) {
 		$.descripcion_producto.val(data.descripcion);
@@ -174,7 +174,7 @@ $($.codigo_producto).autocompleter({
 
 /* Autocomplete descripción producto */
 $($.descripcion_producto).autocompleter({
-	source: '/producto/search_desc',
+	source: '/productos/search_desc',
 	customLabel: 'descripcion',
 	callback: function (value, index, data) {
 		$.codigo_producto.val(data.id);
