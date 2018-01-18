@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulosTable extends Migration
+class CreateBloquesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateModulosTable extends Migration
             $table->string('estado');
             $table->string('icono');
             $table->integer('modulo_id')->unsigned();
-            $table->foreign('modulo_id')->references('id')->on('areas')->onDelete('cascade');
+            $table->foreign('modulo_id')->references('id')->on('modulos')->onDelete('cascade');
             $table->index('modulo_id');
             $table->timestamps();
         });

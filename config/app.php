@@ -168,7 +168,7 @@ return [
 			* Package Service Providers...
 			*/
 		Laravel\Tinker\TinkerServiceProvider::class,
-
+		Unisharp\Setting\SettingServiceProvider::class,
 		/*
 			* Application Service Providers...
 			*/
@@ -227,6 +227,7 @@ return [
 		'Validator' => Illuminate\Support\Facades\Validator::class,
 		'View' => Illuminate\Support\Facades\View::class,
 		'Module' => Caffeinated\Modules\Facades\Module::class,
+		'Setting' => Unisharp\Setting\SettingFacade::class,
 	],
 
 ];

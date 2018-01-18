@@ -11,7 +11,8 @@
         "php": ">=5.6.4",
         "caffeinated/modules": "^4.2",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "unisharp/laravel-settings": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
