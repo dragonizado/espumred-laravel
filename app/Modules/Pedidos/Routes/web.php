@@ -13,4 +13,5 @@
 
 Route::group(['prefix' => 'pedidos'], function () {
 	Route::get('/', 'PedidoController@index');
+	Route::post('/', 'PedidoController@create');
 });

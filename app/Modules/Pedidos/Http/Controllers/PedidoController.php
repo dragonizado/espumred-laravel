@@ -18,4 +18,8 @@ class PedidoController extends Controller {
 		return view('pedidos::index', compact('listasprecios'));
 	}
 
+	public function create() {
+		dd('Se ha ejecutado el formulario de pedidos');
+	}
+
 }

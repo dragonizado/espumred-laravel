@@ -25,7 +25,7 @@
 								<div id="slider">
 
 									<div id="step1" class="card-body step">
-										<form id="pedidos_form" action="#" method="post">
+										<form id="pedidos_form" action="{{ url('pedidos') }}" method="post">
 
 											<div class="row">
 												<div class="col-md-6 col-xs-12">
