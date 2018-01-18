@@ -162,7 +162,6 @@ return [
 		Illuminate\Translation\TranslationServiceProvider::class,
 		Illuminate\Validation\ValidationServiceProvider::class,
 		Illuminate\View\ViewServiceProvider::class,
-		TCG\Voyager\VoyagerServiceProvider::class,
 		Caffeinated\Modules\ModulesServiceProvider::class,
 		Clockwork\Support\Laravel\ClockworkServiceProvider::class,
 		/*
