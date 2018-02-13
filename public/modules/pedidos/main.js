@@ -29,9 +29,9 @@ $(document).ready(function($){
 $.tipo_pedido.change(function(){
 	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
 
-	if($.codigo_cliente.val() && $.tipo_pedido.val() == '1') {
+	if($.codigo_cliente.val() && $.tipo_pedido.val() == 1) {
 		validateCC($.codigo_cliente.val());
-	} else {
+	} else if ($.codigo_cliente.val() && $.tipo_pedido.val() > 1){
 		removeInputError("#codigo_cliente, #nombre_cliente");
 		enable($.next_btn);
 	}
