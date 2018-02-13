@@ -1,3 +1,11 @@
+new Vue({
+	el: '#pedidos',
+	data: {},
+	created: function() {
+		alert("Hola desde Vue")
+	}
+})
+
 /*********************
 *     VARIABLES      *
 *********************/
@@ -10,6 +18,8 @@ $.codigo_producto = $("#cod_producto");
 $.descripcion_producto = $("#desc_producto");
 $.bonificacion = $("#bonificacion");
 $.next_btn = $("#next_btn");
+$.step1 = $("#step1");
+$.step2 = $("#step2");
 
 /*********************
 *        INIT        *
@@ -21,7 +31,7 @@ $(document).ready(function($){
 	disable('#pedidos_form input, #pedidos_form select, #next_btn', '#tipo_pedido');
 	disable('#val_descuento, #val_unitario, #val_total');
 	hide("#valor_kilo_row");
-
+	$.step2.height($.step1.height());
 });
 
 

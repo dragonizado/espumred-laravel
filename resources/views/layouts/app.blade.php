@@ -45,6 +45,8 @@
       <span class="ml-auto"><a href="http://www.espumasmedellin.com">Espumas Medellín</a></span>
     </footer>
 
+    <script src="{{ asset('js/vue.js') }}"></script>
+    <script src="{{ asset('js/axios.min.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -53,7 +55,7 @@
     <script src="{{ asset('js/toastr.js') }}"></script>
     <script src="{{ asset('js/accounting.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    @yield('scripts')
+    @stack('scripts')
     
   </body>
 </html>
