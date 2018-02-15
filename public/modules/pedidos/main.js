@@ -1,3 +1,11 @@
+new Vue({
+	el: '#pedidos',
+	data: {},
+	created: function() {
+		alert("Hola desde Vue")
+	}
+})
+
 /*********************
 *     VARIABLES      *
 *********************/
@@ -10,6 +18,8 @@ $.codigo_producto = $("#cod_producto");
 $.descripcion_producto = $("#desc_producto");
 $.bonificacion = $("#bonificacion");
 $.next_btn = $("#next_btn");
+$.step1 = $("#step1");
+$.step2 = $("#step2");
 
 /*********************
 *        INIT        *
@@ -21,7 +31,7 @@ $(document).ready(function($){
 	disable('#pedidos_form input, #pedidos_form select, #next_btn', '#tipo_pedido');
 	disable('#val_descuento, #val_unitario, #val_total');
 	hide("#valor_kilo_row");
-
+	$.step2.height($.step1.height());
 });
 
 
@@ -29,9 +39,9 @@ $(document).ready(function($){
 $.tipo_pedido.change(function(){
 	$(".title_tipo_pedido").text($('option:selected',this).text()).removeClass("d-none");
 
-	if($.codigo_cliente.val() && $.tipo_pedido.val() == '1') {
+	if($.codigo_cliente.val() && $.tipo_pedido.val() == 1) {
 		validateCC($.codigo_cliente.val());
-	} else {
+	} else if ($.codigo_cliente.val() && $.tipo_pedido.val() > 1){
 		removeInputError("#codigo_cliente, #nombre_cliente");
 		enable($.next_btn);
 	}

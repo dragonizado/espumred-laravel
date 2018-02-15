@@ -14,7 +14,7 @@
 
 					<hr class="m-0">
 
-					<div class="row pt-3">
+					<div class="row pt-3" id="pedidos">
 						<div class="col-sm-12">
 							<div class="card ov-hidden">
 								<div class="card-header">
@@ -307,7 +307,7 @@
 @endsection
 
 
-@section('scripts')
+@push('scripts')
 	<script src="{{ asset('modules/pedidos/main.js') }}"></script>
 	<script src="{{ asset('modules/pedidos/validatecc.js') }}"></script>
-@endsection
+@endpush

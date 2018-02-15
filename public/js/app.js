@@ -21,10 +21,6 @@ $.grayLight =     '#818a91';
 $.grayLighter =   '#d1d4d7';
 $.grayLightest =  '#f8f9fa';
 
-//Steps
-$.step1 = $("#step1");
-$.step2 = $("#step2");
-
 'use strict';
 
 /****
@@ -67,7 +63,6 @@ $(document).ready(function($){
     }
   }
 
-  $.step2.height($.step1.height());
 
   // Add class .active to current link
   $.navigation.find('a').each(function(){
