@@ -13,5 +13,6 @@
 
 Route::group(['prefix' => 'pedidos'], function () {
 	Route::get('/', 'PedidoController@index');
+	Route::get('calculo','PedidoController@calculo')->name('calculos');
 	Route::post('/', 'PedidoController@create');
 });
