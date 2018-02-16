@@ -31,14 +31,9 @@
 												<div class="col-md-6 col-xs-12">
 													<div class="form-group">
 														<label for="tipo_pedido">Tipo de Pedido</label>
-														<select class="form-control" id="tipo_pedido">
+														<select class="form-control" id="tipo_pedido" v-model="order.typeOrderSelected">
 															<option value="" disabled selected>Seleccione una opción</option>
-															<option value="1">Espumas</option>
-															<option value="2">Colchones</option>
-															<option value="3">Muebles</option>
-															<option value="4">Modulos</option>
-															<option value="5">Segundas</option>
-															<option value="6">Otros</option>
+															<option v-for="option in typeOrderOptions" v-bind:value="option.value">@{{option.name}}</option>
 														</select>
 													</div>
 												</div>
@@ -59,14 +54,14 @@
 												<div class="col-md-6 col-xs-12">
 													<div class="form-group">
 														<label for="name">Nombre Cliente</label>
-														<input type="text" class="form-control" id="nombre_cliente">
+														<input type="text" class="form-control" id="nombre_cliente" v-model="order.nameClient">
 														<div id="nombre_cliente_error" class="invalid-feedback"></div>
 													</div>
 												</div>
 												<div class="col-md-6 col-xs-12">
 													<div class="form-group">
 														<label for="name">Código Cliente</label>
-														<input type="text" class="form-control" id="codigo_cliente">
+														<input type="text" class="form-control" id="codigo_cliente" v-model="order.codClient">
 														<div id="codigo_cliente_error" class="invalid-feedback"></div>
 													</div>
 												</div>

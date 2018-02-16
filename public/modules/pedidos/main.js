@@ -1,10 +1,3 @@
-new Vue({
-	el: '#pedidos',
-	data: {},
-	created: function() {
-		alert("Hola desde Vue")
-	}
-})
 
 /*********************
 *     VARIABLES      *
@@ -20,6 +13,79 @@ $.bonificacion = $("#bonificacion");
 $.next_btn = $("#next_btn");
 $.step1 = $("#step1");
 $.step2 = $("#step2");
+
+
+var pedidos = new Vue({
+	el: '#pedidos',
+	data: {
+		typeOrderOptions:[
+			{
+				name:'Espumas',
+				value:1,
+			},{
+				name:'Colchones',
+				value:2,
+			},{
+				name:'Muebles',
+				value:3,
+			},{
+				name:'Modulos',
+				value:4,
+			},{
+				name:'Segundas',
+				value:5,
+			},{
+				name:'Otros',
+				value:6,
+			}
+		],
+		// articles:[],
+		order:
+			{
+				typeOrderSelected:'',
+				nameClient:'',
+				codClient:'',
+				observations:'',
+				bonus:false,
+				bonusDetails:[],
+				detailsOrder:[
+					{
+						numOrderCC:'',
+						codProd:'',
+						description:'',
+						amount:'',
+						porcentAmount:'',
+						pocentValue:'',
+						deliveryDate:'',
+						unitValue:'',
+						valueAmount:'',
+						totalAmount:'',
+					}
+				],
+			}
+	},
+	// created: function() {
+	// 	alert("Hola desde Vue");
+	// },
+	methods:{
+		validateCC: function(){
+			let _url = 'condiciones/validate';
+			axios.get(_url,this.order.codClient).then(response => {
+				if(response.data.action == "continuar"){
+					removeInputError("#nombre_cliente");
+					showInputSuccess("#nombre_cliente, #codigo_cliente");
+					this.articles = response.data.articulos;
+					enable($.next_btn);
+				}else if(response.data.action == "error"){
+					showInputError("#codigo_cliente, #nombre_cliente", response.data.mensaje);
+					toastr.error(response.data.mensaje, "Error");
+					disable($.next_btn);
+				}
+			});
+		}
+	}
+})
+
 
 /*********************
 *        INIT        *
@@ -148,9 +214,12 @@ $($.nombre_cliente).autocompleter({
 	source: '/clientes/search_name',
 	customLabel: 'nombre_cliente',
 	callback: function (value, index, data) {
-		$.codigo_cliente.val(data.cod_cliente);
-		if($.tipo_pedido.val() == '1') {
-			validateCC(data.cod_cliente);
+		pedidos.order.codClient = data.cod_cliente;
+		pedidos.order.nameClient = data.nombre_cliente;
+		// $.codigo_cliente.val(data.cod_cliente);
+		// if($.tipo_pedido.val() == '1') {
+		if(pedidos.order.typeOrderSelected == '1') {
+			pedidos.validateCC(data.cod_cliente);
 		} else {
 			enable($.next_btn);
 		}
@@ -163,9 +232,12 @@ $($.codigo_cliente).autocompleter({
 	source: '/clientes/search_cod',
 	customLabel: 'cod_cliente',
 	callback: function (value, index, data) {
-		$.nombre_cliente.val(data.nombre_cliente);
-		if($.tipo_pedido.val() == '1') {
-			validateCC(data.cod_cliente);
+		pedidos.order.nameClient = data.nombre_cliente;
+		pedidos.order.codClient = data.cod_cliente;
+		// $.nombre_cliente.val(data.nombre_cliente);
+		// if($.tipo_pedido.val() == '1') {
+		if(pedidos.order.typeOrderSelected == '1') {
+			pedidos.validateCC(data.cod_cliente);
 		} else {
 			enable($.next_btn);
 		}
