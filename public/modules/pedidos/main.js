@@ -48,19 +48,45 @@ var pedidos = new Vue({
 				observations:'',
 				bonus:false,
 				bonusDetails:[],
+				totalAmount:'300.000',
 				detailsOrder:[
 					{
-						numOrderCC:'',
-						codProd:'',
-						description:'',
-						amount:'',
-						porcentAmount:'',
-						pocentValue:'',
-						deliveryDate:'',
-						unitValue:'',
-						valueAmount:'',
-						totalAmount:'',
+						numOrderCC:'1', // numero de orden de compra
+						codProd:'800000', // codigo del producto
+						description:'lam prueba', // decripcion del producto
+						amount:'120', // cantidad de productos
+						valuekilo:'', // valor de kilo (espumas / lam / mod)
+						porcentageAmount:'20', // porcentaje de descuento al valor total
+						pocentageValue:'20000', // cantidad de descuento en $$$  
+						deliveryDate:'26/02/2018', // fecha de entrega
+						unitValue:'9.000', // valor unitario
+						totalAmount:'100000', // sumatoria total del articulo
+					},
+					{
+						numOrderCC:'2',
+						codProd:'800000',
+						description:'lam prueba 2',
+						amount:'120',
+						valuekilo:'',
+						porcentageAmount:'20',
+						pocentageValue:'20000', 
+						deliveryDate:'26/02/2018',
+						unitValue:'9.000',
+						totalAmount:'100000',
+					},
+					{
+						numOrderCC:'3',
+						codProd:'800000',
+						description:'lam prueba 3',
+						amount:'120',
+						valuekilo:'',
+						porcentageAmount:'20',
+						pocentageValue:'20000', 
+						deliveryDate:'26/02/2018',
+						unitValue:'9.000',
+						totalAmount:'100000',
 					}
+					
 				],
 			}
 	},

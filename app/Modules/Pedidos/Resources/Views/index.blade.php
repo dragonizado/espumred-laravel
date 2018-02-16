@@ -224,33 +224,11 @@
 														</tr>
 													</thead>
 													<tbody>
-														<tr>
-															<th scope="row">1</th>
-															<td>Mark</td>
-															<td>9.000</td>
-															<td>20.500</td>
-															<td class="text-center">
-																<button class="btn btn-danger lh-1 p-1">
-																	<i class="font-weight-bold icon-close"></i>
-																</button>
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">2</th>
-															<td>Jacob</td>
-															<td>1.050</td>
-															<td>15.000</td>
-															<td class="text-center">
-																<button class="btn btn-danger lh-1 p-1">
-																	<i class="font-weight-bold icon-close"></i>
-																</button>
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">3</th>
-															<td>Larry</td>
-															<td>1.250</td>
-															<td>12.000</td>
+														<tr v-for="orderdetailinfo in order.detailsOrder">
+															<th scope="row">@{{orderdetailinfo.numOrderCC}}</th>
+															<td>@{{orderdetailinfo.description}}</td>
+															<td>@{{orderdetailinfo.unitValue}}</td>
+															<td>@{{orderdetailinfo.totalAmount}}</td>
 															<td class="text-center">
 																<button class="btn btn-danger lh-1 p-1">
 																	<i class="font-weight-bold icon-close"></i>
@@ -264,7 +242,7 @@
 															<td colspan="3">
 																<div class="d-flex justify-content-between">
 																	<div class="h5 mb-0">Total: </div>
-																	<div class="h5 mb-0">$24.000.000</div>
+																	<div class="h5 mb-0">$@{{order.totalAmount}}</div>
 																</div>
 															</td>
 														</tr>
