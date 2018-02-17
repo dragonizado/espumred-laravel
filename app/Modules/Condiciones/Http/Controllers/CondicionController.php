@@ -41,7 +41,7 @@ class CondicionController extends Controller {
 			]);
 		} else {
 			return response()->json([
-				'mensaje' => 'El cliente seleccionado no cuenta con una condición comercial vigente o actualizada.',
+				'mensaje' => 'El cliente seleccionado no cuenta con una condición comercial vigente o actualizada.'.$request->codigo,
 				'action' => 'error'
 			]);
 		}

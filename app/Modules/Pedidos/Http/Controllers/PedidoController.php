@@ -24,37 +24,62 @@ class PedidoController extends Controller {
 	}
 
 	public function calculo(Request $request){
-		$cod = 80001741;
-		$form = "espumas";
-		if($request->ajax){
-			$producto = Producto::find($cod);
-		}else{
-
-			$producto = Producto::find($cod); // se busca el producto en la bd
-			$_descripcion = explode(' ',$producto->descripcion); //se separa el el tipo de articulo si es lam/e.con/col/mod etc  
-			$data_form = $_descripcion[0]; // se saca el valor lam/e.con/col/mod etc
+		$cod = $request->codProd;
+		$producto = Producto::find($cod); // se busca el producto en la bd
+		$_descripcion = explode(' ',$producto->descripcion); //se separa el el tipo de articulo si es lam/e.con/col/mod etc  
+		$data_form = $_descripcion[0]; // se saca el valor lam/e.con/col/mod etc
 
 			// variables que vienen del formulario
-			$cantidad = 0; 
-            $por_descuento = 0;
+			$valor_kilo = $request->valuekilo;
+			$cantidad = $request->amount; 
+            $por_descuento = $request->porcentageAmount;
 
             // se pregunta por el tipo de producto
 			if($data_form == "LAM"){
-				dd($this->cal_form_espumas($producto));
+				return response()->json($this->cal_form_espumas($producto,$valor_kilo,$cantidad,$por_descuento));
 			}else{
-				dd("El producto seleccionado no se puede procesar ya que no es un producto de espumas o lamina de espuma producto seleccionado = ". $producto->id ." el form data es = ".$data_form);
+				return response()->json([
+					'mensaje'=>"El producto seleccionado no se puede procesar ya que no es un producto de espumas o lamina de espuma producto seleccionado = ". $producto->id ." el form data es = ".$data_form,
+					'request'=>$request->codProd,
+				]);
 			}
-		}
+
+			
 	}
 
-	protected function cal_form_espumas($producto){
-		$_response = null;
+	protected function cal_form_espumas($producto,$valor_kilo,$cantidad,$por_descuento){
+		$response = [];
 		$densidad = str_replace(",", ".",$producto->densidad);
 	    $ancho = str_replace(",", ".",$producto->ancho);
 	    $largo =  str_replace(",", ".",$producto->largo);
 	    $calibre = str_replace(",", ".",$producto->calibre);
-
-
+	    if($densidad != null && $densidad != "0"){
+	      if ($ancho != null && $ancho != "0") {
+	        if ($largo != null && $largo != "0") {
+	          if ($calibre != null && $calibre != "0") {
+	            $valor_unitario = $this->calcularValor_unitario("LAM",$valor_kilo,$densidad,$ancho,$largo,$calibre);
+	            $descuento = $this->calcularValor_descuento($valor_unitario,$cantidad,$por_descuento);
+	            $valor_total_p = $this->calcularValor_total($valor_unitario,$cantidad,$descuento);
+	            $response = [
+	            	"status"=>"success",
+	            	"mensaje"=>"ok",
+		            "valor_unitario"=>$valor_unitario,
+		            "valor_descuento"=>$descuento,
+		            "valor_total"=>$valor_total_p,
+	            ];
+	          }else{
+	          	$response = ['status'=>"error","mensaje"=>"El producto no tiene un calibre registrado."];
+	          }
+	        }else{
+	          $response = ['status'=>"error","mensaje"=>"El producto no tiene un largo registrado."];
+	        }
+	      }else{
+	        $response = ['status'=>"error","mensaje"=>"El producto no tiene un ancho registrado."];
+	      }
+	    }else{
+	      $response = ['status'=>"error","mensaje"=>"El producto no tiene una densidad registrada."];
+	    }
+	    
 		return $response;
 	}
 

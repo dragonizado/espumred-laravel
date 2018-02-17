@@ -137,36 +137,37 @@
 												<div class="form-group row">
 													<label class="col-md-4 f12 form-control-label">Orden de compra cliente</label>
 													<div class="col-md-8">
-														<input type="number" id="orden_compra" name="orden_compra" class="form-control">
+														<input type="number" id="orden_compra" name="orden_compra" class="form-control" v-model="temporaldetailorder.numOrderCC">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Código Producto</label>
 													<div class="col-md-8">
-														<input type="text" id="cod_producto" name="cod_producto" placeholder="#######" class="form-control">
+														<input type="text" id="cod_producto" name="cod_producto" placeholder="#######" class="form-control" v-model="temporaldetailorder.codProd">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Descripción</label>
 													<div class="col-md-8">
-														<input type="text" id="desc_producto" name="desc_producto" class="form-control">
+														<input type="text" id="desc_producto" name="desc_producto" class="form-control" v-model="temporaldetailorder.description">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Cantidad</label>
 													<div class="col-md-8">
-														<input type="number" id="cantidad" name="cantidad" placeholder="##" class="form-control">
+														<input type="number" id="cantidad" name="cantidad" placeholder="##" class="form-control" v-model="temporaldetailorder.amount" v-on:keyup="calculo()">
 													</div>
 												</div>
 
 												<div class="form-group row" id="valor_kilo_row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Valor Kilo</label>
 													<div class="col-md-8">
-														<select  id="valor_kilo" name="valor_kilo" class="form-control">
+														<select  id="valor_kilo" name="valor_kilo" class="form-control" v-model="temporaldetailorder.valuekilo" v-on:change="calculo()">
 															<option value="" disabled selected>Seleccione un valor</option>
+															<option v-for="articulos in articles" value="" v-bind:value="articulos.nuevo_precio">@{{articulos.descripcion}} --- @{{articulos.nuevo_precio}}</option>
 														</select>
 													</div>
 												</div>
@@ -174,35 +175,35 @@
 												<div class="form-group row">
 													<label class="col-md-4 f12 form-control-label">Porcentaje Descuento</label>
 													<div class="col-md-8">
-														<input type="number" id="descuento" name="descuento" placeholder="##" class="form-control">
+														<input type="number" id="descuento" name="descuento" placeholder="##" class="form-control" v-model="temporaldetailorder.porcentageAmount" v-on:keyup="calculo()">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Valor Descuento</label>
 													<div class="col-md-8">
-														<input type="text" id="val_descuento" name="val_descuento" class="form-control">
+														<input type="text" id="val_descuento" name="val_descuento" class="form-control" v-model="temporaldetailorder.porcentageValue">
 													</div>
 												</div>
 
 												<div class="form-group row" id="val_unitario_row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Valor Unitario</label>
 													<div class="col-md-8">
-														<input type="text" id="val_unitario" name="val_unitario" class="form-control">
+														<input type="text" id="val_unitario" name="val_unitario" class="form-control" v-model="temporaldetailorder.unitValue">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Valor total</label>
 													<div class="col-md-8">
-														<input type="text" id="val_total" name="val_total" class="form-control">
+														<input type="text" id="val_total" name="val_total" class="form-control" v-model="temporaldetailorder.totalAmount">
 													</div>
 												</div>
 
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Fecha de entrega</label>
 													<div class="col-md-8">
-														<input type="text" id="fecha_entrega" name="fecha_entrega" class="form-control datepicker">
+														<input type="text" id="fecha_entrega" name="fecha_entrega" class="form-control datepicker" v-model="temporaldetailorder.deliveryDate">
 													</div>
 												</div>
 
@@ -224,13 +225,13 @@
 														</tr>
 													</thead>
 													<tbody>
-														<tr v-for="orderdetailinfo in order.detailsOrder">
+														<tr v-for="(orderdetailinfo, indexs) in order.detailsOrder">
 															<th scope="row">@{{orderdetailinfo.numOrderCC}}</th>
 															<td>@{{orderdetailinfo.description}}</td>
 															<td>@{{orderdetailinfo.unitValue}}</td>
 															<td>@{{orderdetailinfo.totalAmount}}</td>
 															<td class="text-center">
-																<button class="btn btn-danger lh-1 p-1">
+																<button class="btn btn-danger lh-1 p-1" v-on:click="removeitem(indexs),calordertotal()">
 																	<i class="font-weight-bold icon-close"></i>
 																</button>
 															</td>
@@ -256,7 +257,7 @@
 														</button>
 													</div>
 													<div class="col-md-6">
-														<button type="button" class="btn btn-success btn-lg btn-block">
+														<button type="button" class="btn btn-success btn-lg btn-block" v-on:click="additem()">
 															Enviar Pedido <i class="icon-paper-plane"></i>
 														</button>
 													</div>
