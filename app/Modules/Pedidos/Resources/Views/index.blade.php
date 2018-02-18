@@ -210,7 +210,7 @@
 												<div class="form-group">
 													<button id="prev_btn" onclick="stepPrev()" type="button" class="btn btn-success mt-2">
 														<i class="fa fa-arrow-left"></i>&nbsp; <b>Volver</b> 
-													<button id="add_btn" type="button" class="btn btn-info mt-2 float-right" style="color:white;"  v-on:click="additem()">
+													<button v-if="temporaldetailorder.totalAmount != 0" id="add_btn" type="button" class="btn btn-info mt-2 float-right" style="color:white;"  v-on:click="additem()">
 														<i class="fa fa-plus"></i>&nbsp; <b>Añadir</b> 
 													</button>
 												</div>
