@@ -45,7 +45,7 @@ var pedidos = new Vue({
 				observations:'',
 				bonus:false,
 				bonusDetails:[],
-				totalAmount:300.000,
+				totalAmount:'300.000',
 				detailsOrder:[
 					{
 						numOrderCC:'1', // numero de orden de compra

@@ -158,7 +158,7 @@
 												<div class="form-group row">
 													<label class="col-md-4 f12 pt-2 form-control-label">Cantidad</label>
 													<div class="col-md-8">
-														<input type="number" id="cantidad" name="cantidad" placeholder="##" class="form-control" v-model="temporaldetailorder.amount" v-on:keyup="calculo()">
+														<input type="number" id="cantidad" name="cantidad" placeholder="##" class="form-control" v-model="temporaldetailorder.amount" v-on:change="calculo()" v-on:keyup="calculo()" >
 													</div>
 												</div>
 
@@ -175,7 +175,7 @@
 												<div class="form-group row">
 													<label class="col-md-4 f12 form-control-label">Porcentaje Descuento</label>
 													<div class="col-md-8">
-														<input type="number" id="descuento" name="descuento" placeholder="##" class="form-control" v-model="temporaldetailorder.porcentageAmount" v-on:keyup="calculo()">
+														<input type="number" id="descuento" name="descuento" placeholder="##" class="form-control" v-model="temporaldetailorder.porcentageAmount" v-on:change="calculo()" v-on:keyup="calculo()">
 													</div>
 												</div>
 
@@ -210,6 +210,8 @@
 												<div class="form-group">
 													<button id="prev_btn" onclick="stepPrev()" type="button" class="btn btn-success mt-2">
 														<i class="fa fa-arrow-left"></i>&nbsp; <b>Volver</b> 
+													<button id="add_btn" type="button" class="btn btn-info mt-2 float-right" style="color:white;"  v-on:click="additem()">
+														<i class="fa fa-plus"></i>&nbsp; <b>Añadir</b> 
 													</button>
 												</div>
 											</div>
@@ -257,7 +259,7 @@
 														</button>
 													</div>
 													<div class="col-md-6">
-														<button type="button" class="btn btn-success btn-lg btn-block" v-on:click="additem()">
+														<button type="button" class="btn btn-success btn-lg btn-block">
 															Enviar Pedido <i class="icon-paper-plane"></i>
 														</button>
 													</div>
